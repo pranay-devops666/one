@@ -20,3 +20,12 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
+
+- task: TomcatParallelDeployment@2
+  inputs:
+    TomcatUrl: 'http://48.217.187.71:8080/manager/html'
+    Username: 'tomcat'
+    Password: 'admin@123'
+    Warfile: 'target/myweb-8.7.1.war'
+    Context: '/ourapp'
+    ServerVersion: '7OrAbove'
